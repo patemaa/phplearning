@@ -3,27 +3,18 @@
 require 'functions.php';
 //require 'router.php';
 
-//connect to our MySql database
+//connect to our MySql database\ and execute a query
 
-class Person {
-    public $name;
-    public $age;
+$dsn = 'mysql:host=localhost;port=3306;dbname=myapp;user=root;charset=utf8mb4';
 
-    public function breathe ()
-    {
-//        echo "breathing";
-          echo $this->name . ' ' . "breathing";
-    }
+$pdo = new PDO($dsn, 'root');
+
+$statement = $pdo -> prepare("select * from posts");
+
+$statement ->execute();
+
+$posts = $statement -> fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($posts as $post) {
+    echo "<l'>" . $post['title'] . "</l>";
 }
-
-$person = new Person();
-
-$person ->name = 'John Doe';
-$person ->age = 25;
-
-//dd($person);
-//dd($person->name);
-//dd($person->age);
-//dd($person->breathe());
-
-

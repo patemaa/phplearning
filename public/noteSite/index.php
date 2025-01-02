@@ -12,4 +12,3 @@ $query = "SELECT * FROM posts WHERE id = :id";
 
 $posts = $db->query($query, [':id' => $id])->fetch();
 
-dd($posts);

@@ -19,6 +19,6 @@ class Database
 
         $statement->execute($params);
 
-        return  $statement;
+        return $statement;
     }
 }

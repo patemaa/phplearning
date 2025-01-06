@@ -11,7 +11,7 @@
                         <a href="/" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sam font-medium">Home</a>
                         <a href="/about" class="<?= urlIs('/about.php')? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sam font-medium">About Us</a>
                         <a href="/contact" class="<?= UrlIs('/contact.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sam font-medium" >Contact</a>
-                        <a href="/notes" class="<?= UrlIs('/notes.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sam font-medium" >Notes</a>
+                        <a href="/notes" class="<?= UrlIs('/index.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sam font-medium" >Notes</a>
 
 
                     </div>

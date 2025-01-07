@@ -17,7 +17,6 @@ function routeToController($uri, $routes) {
     }
 }
 
-
 $uri = $_SERVER['REQUEST_URI'];
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 

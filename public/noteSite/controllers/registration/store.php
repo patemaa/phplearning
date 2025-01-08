@@ -1,8 +1,8 @@
 <?php
 
 use Core\App;
-use Core\Validator;
 use Core\Database;
+use Core\Validator;
 
 $db = App::resolve(Database::class);
 
@@ -11,11 +11,11 @@ $password = $_POST['password'];
 
 $errors = [];
 if (!Validator::email($email)) {
-    $errors['email'] = 'Please provide a valid email address';
+    $errors['email'] = 'Please provide a valid email address.';
 }
 
-if (!Validator::string($password, 7, 225)) {
-    $errors['password'] = 'Please provide a passwrod at least seven characters';
+if (!Validator::string($password, 7, 255)) {
+    $errors['password'] = 'Please provide a password of at least seven characters.';
 }
 
 if (!empty($errors)) {
@@ -32,14 +32,12 @@ if ($user) {
     header('location: /');
     exit();
 } else {
-    $db->query('inseert into users(email,password) values(:email, :password)', [
+    $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
         'email' => $email,
-        'password' => $password
+        'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
-    $_SESSION['user'] = [
-        'email' => $email
-    ];
+    login($user);
 
     header('location: /');
     exit();

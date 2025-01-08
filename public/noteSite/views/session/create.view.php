@@ -4,10 +4,9 @@
         <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div class="w-full max-w-md space-y-8">
                 <div>
-                    <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Register for a new
-                        account</h2>
+                    <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Log In!</h2>
                 </div>
-                <form class="mt-8 space-y-6" action="/register" method="POST">
+                <form class="mt-8 space-y-6" action="/session" method="POST">
                     <div class="-space-y-px rounded-md shadow-sm">
                         <div>
                             <label for="email" class="sr-only">Email address</label>
@@ -26,7 +25,7 @@
                         <button type="submit"
                                 class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
-                            Register
+                            Log In
                         </button>
                     </div>
                     <ul>

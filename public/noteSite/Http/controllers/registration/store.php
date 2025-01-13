@@ -1,9 +1,9 @@
 <?php
 
 use Core\App;
+use Core\Authenticator;
 use Core\Database;
 use Core\Validator;
-use Core\Authenticator;
 
 $db = App::resolve(Database::class);
 
@@ -33,12 +33,12 @@ if ($user) {
     header('location: /');
     exit();
 } else {
-    $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+    $user = $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
         'email' => $email,
         'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
-    (new Authenticator())->login(['email' => $email]);
+    (new Authenticator)->login(['email' => $email]);
 
     header('location: /');
     exit();

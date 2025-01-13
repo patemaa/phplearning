@@ -6,7 +6,7 @@ class Session
 {
     public static function has($key)
     {
-        return (bool)static::get($key);
+        return (bool) static::get($key);
     }
 
     public static function put($key, $value)
@@ -26,7 +26,7 @@ class Session
 
     public static function unflash()
     {
-        unset($_SESSION['__flash']);
+        unset($_SESSION['_flash']);
     }
 
     public static function flush()
